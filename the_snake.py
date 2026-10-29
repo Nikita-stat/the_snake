@@ -120,8 +120,13 @@ class Snake(GameObject):
 
     def move(self, flag):
         """Логика движения змейки как объекта"""
-        self.positions.insert(0, ((self.positions[0][0] + self.direction[0]) % GRID_WIDTH,
-                                  (self.positions[0][1] + self.direction[1]) % GRID_HEIGHT))
+        self.positions.insert(
+            0,
+            (
+                (self.positions[0][0] + self.direction[0]) % GRID_WIDTH,
+                (self.positions[0][1] + self.direction[1]) % GRID_HEIGHT,
+            ),
+        )
         if self.positions[0] in self.positions[1:]:
             self.reset()
             t = 1
